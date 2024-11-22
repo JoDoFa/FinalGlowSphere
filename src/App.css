@@ -1,0 +1,803 @@
+/* App.css */
+
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  min-height: 100vh; /* Ensure full-screen height */
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Makes the App container stretch to full height */
+}
+
+.App-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #0074D9;
+  color: white;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.App-header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+nav ul {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+nav ul li {
+  margin: 0 10px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #FFD700;
+}
+
+main {
+  flex: 1;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+  background-color: #0074D9;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+}
+
+header, main, footer {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Full-Screen Background */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #f4f4f9; /* Background color or gradient */
+  z-index: -1; /* Send it behind all other elements */
+}
+
+/* Home Component Styles */
+/* Main container */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f4f7fb; /* Subtle light background */
+  padding: 20px;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Welcome container */
+.welcome-container {
+  text-align: center;
+  margin-bottom: 40px; /* Increased space for a balanced look */
+}
+
+.welcome-container h2 {
+  font-size: 2.8rem; /* Larger, more professional font size */
+  color: #333;
+  font-weight: 600; /* Emphasize the welcome text */
+  margin-bottom: 10px;
+}
+
+.welcome-container p {
+  font-size: 1.2rem;
+  color: #666;
+  max-width: 700px; /* Increased width for a better reading experience */
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Button container for better alignment */
+.button-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* General button style */
+.button-container button {
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  width: 220px;
+  max-width: 90%;
+  margin: 10px 0; /* Ensuring some space between buttons */
+}
+
+/* Shop Now Button */
+.shop-now-btn {
+  background-color: #007bff; /* Adjusted blue */
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2); /* Soft shadow for depth */
+}
+
+.shop-now-btn:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px); /* Subtle hover effect */
+}
+
+/* Explore Categories Button */
+.explore-btn {
+  background-color: #ffbf00; /* Warm gold */
+  color: #333;
+  box-shadow: 0 4px 8px rgba(255, 191, 0, 0.2); /* Soft shadow */
+}
+
+.explore-btn:hover {
+  background-color: #e6a800;
+  transform: translateY(-2px); /* Subtle hover effect */
+}
+
+/* My Account Button */
+.account-btn {
+  background-color: #28a745;
+  color: white;
+  box-shadow: 0 4px 8px rgba(40, 167, 69, 0.2); /* Soft shadow */
+}
+
+.account-btn:hover {
+  background-color: #218838;
+  transform: translateY(-2px); /* Subtle hover effect */
+}
+
+
+/* Products Component Styles */
+/* Main product container */
+/* Main container for products */
+/* Overall Products Container */
+.products-container {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+p {
+  text-align: center;
+  color: #555;
+  font-size: 1rem;
+  margin-bottom: 40px;
+}
+
+/* Category Styling */
+.category {
+  margin-bottom: 40px;
+}
+
+.category-title {
+  font-size: 2rem;
+  text-align: left;
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: 600;
+}
+
+/* Product Card Container Styling */
+.product-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+/* Individual Product Card Styling */
+.product-card {
+  width: 23%;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-image {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+.product-title {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  color: #333;
+}
+
+.product-price {
+  font-size: 1.1rem;
+  color: #28a745;
+  margin: 10px 0;
+}
+
+.product-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+/* Button Styling */
+button {
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.view-details-btn {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.add-to-cart-btn {
+  background-color: #ffc107;
+  color: #333;
+}
+
+.buy-btn {
+  background-color: #28a745;
+  color: #fff;
+}
+
+/* Button Hover Effects */
+button:hover {
+  opacity: 0.8;
+}
+
+.view-details-btn:hover {
+  background-color: #0056b3;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #e0a800;
+}
+
+.buy-btn:hover {
+  background-color: #218838;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .product-card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-card {
+    width: 80%;
+    margin-bottom: 20px;
+  }
+
+  .product-buttons {
+    width: 100%;
+  }
+}
+
+
+
+
+/* Cart Component Styles */
+/* Container for the entire cart page */
+.cart-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+}
+
+/* Cart Page Title */
+.cart-container h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+/* Paragraph text for instructions or descriptions */
+.cart-container p {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #777;
+  margin-bottom: 30px;
+}
+
+/* Cart items container with padding and border */
+.cart-items-container {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* Individual Cart Item Style */
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.cart-item h3 {
+  font-size: 1.6rem;
+  color: #333;
+  font-weight: 500;
+}
+
+.cart-item p {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.cart-item button {
+  padding: 8px 16px;
+  background-color: #e74c3c;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cart-item button:hover {
+  background-color: #c0392b;
+  transform: scale(1.05);
+}
+
+/* Cart Summary Section */
+.cart-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+  border-top: 2px solid #f0f0f0;
+  padding-top: 20px;
+}
+
+.cart-summary h3 {
+  font-size: 1.8rem;
+  color: #333;
+  font-weight: 600;
+}
+
+.cart-summary p {
+  font-size: 1.4rem;
+  color: #333;
+  font-weight: 500;
+}
+
+/* Buttons container at the bottom of the cart */
+.cart-buttons-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.cart-buttons-container button {
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 48%;
+  border: none;
+}
+
+.proceed-btn {
+  background-color: #3498db;
+  color: #fff;
+}
+
+.proceed-btn:hover {
+  background-color: #2980b9;
+  transform: scale(1.05);
+}
+
+.clear-cart-btn {
+  background-color: #95a5a6;
+  color: #fff;
+}
+
+.clear-cart-btn:hover {
+  background-color: #7f8c8d;
+  transform: scale(1.05);
+}
+
+/* Empty Cart Message */
+.cart-empty-message {
+  text-align: center;
+  padding: 40px 0;
+  display: none;
+}
+
+.cart-empty-message p {
+  font-size: 1.6rem;
+  color: #e74c3c;
+  font-weight: 600;
+}
+
+/* Show empty cart message if cart is empty */
+.cart-items-container.empty-cart + .cart-empty-message {
+  display: block;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .cart-container {
+    padding: 20px;
+  }
+
+  .cart-items-container {
+    margin-bottom: 20px;
+  }
+
+  .cart-item h3 {
+    font-size: 1.4rem;
+  }
+
+  .cart-summary h3, .cart-summary p {
+    font-size: 1.4rem;
+  }
+
+  .cart-buttons-container button {
+    font-size: 1rem;
+    padding: 12px 20px;
+  }
+}
+
+/* Account Component Styles */
+/* Container for the Account page */
+.account-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  animation: fadeIn 1s ease-out; /* Fade-in animation */
+}
+
+/* Fade-In Animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Title Style */
+.account-container h2 {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  color: #333;
+  animation: slideIn 0.6s ease-out; /* Slide-in animation */
+}
+
+/* Slide-In Animation */
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Paragraph Style */
+.account-container p {
+  margin-bottom: 20px;
+  color: #555;
+  font-size: 0.9rem;
+  animation: fadeIn 1.2s ease-out; /* Fade-in animation with delay */
+  animation-delay: 0.3s;
+}
+
+/* Button Styles */
+.account-container button {
+  display: inline-block;
+  margin: 5px;
+  padding: 10px 15px;
+  font-size: 0.9rem;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Added transform transition */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for buttons */
+}
+
+.account-container button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px); /* Subtle lift effect */
+}
+
+.account-container button:nth-child(2) {
+  background-color: #dc3545;
+}
+
+.account-container button:nth-child(2):hover {
+  background-color: #a71d2a;
+  transform: translateY(-2px);
+}
+
+.account-container button:nth-child(3) {
+  background-color: #ffc107;
+  color: #333;
+}
+
+.account-container button:nth-child(3):hover {
+  background-color: #d39e00;
+  transform: translateY(-2px);
+}
+
+/* Input Styling */
+.account-container input {
+  width: 100%;
+  padding: 12px; /* Slightly larger padding for more comfortable input */
+  margin: 12px 0;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  background-color: #f9f9f9;
+  transition: all 0.3s ease;
+  animation: fadeIn 1s ease-out; /* Fade-in effect for inputs */
+}
+
+.account-container input:focus {
+  border-color: #007bff;
+  background-color: #fff;
+  transform: scale(1.02); /* Slight zoom effect on focus */
+}
+
+.account-container input:focus-visible {
+  outline: none; /* Remove outline on focus */
+}
+
+/* Label Styling */
+.account-container label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+  animation: fadeIn 1.2s ease-out; /* Fade-in animation for labels */
+  animation-delay: 0.2s;
+}
+
+/* Divs containing inputs */
+.account-container div {
+  margin-bottom: 15px;
+}
+
+/* Hover effect for input labels */
+.account-container div:hover label {
+  color: #007bff; /* Label color change on input hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .account-container {
+    padding: 20px;
+  }
+
+  .account-container h2 {
+    font-size: 1.4rem; /* Slightly smaller heading on mobile */
+  }
+
+  .account-container button {
+    padding: 8px 12px; /* Smaller button padding on mobile */
+    font-size: 0.85rem;
+  }
+
+  .account-container input {
+    padding: 10px; /* Reduced input padding for mobile */
+  }
+}
+
+/* OrderHistory Component Styles */
+/* Container for the Order History */
+.order-history-container {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 30px;
+  border-radius: 12px;
+  background-color: #ffffff;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  animation: fadeIn 1s ease-out; /* Fade-in animation for the entire container */
+  font-family: 'Arial', sans-serif;
+}
+
+/* Fade-In Animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Title Styling */
+.order-history-container h2 {
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+  color: #333;
+  font-weight: 600;
+  text-align: center;
+  animation: slideIn 0.6s ease-out;
+}
+
+/* Slide-In Animation */
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Description paragraph style */
+.order-history-container p {
+  margin-bottom: 30px;
+  color: #555;
+  font-size: 1rem;
+  text-align: center;
+  font-weight: 300;
+}
+
+/* Order List Styling */
+.order-history-container .order-list {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+/* Order List hover effect */
+.order-history-container .order-list:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Order List Title Styling */
+.order-history-container .order-list h3 {
+  font-size: 1.6rem;
+  color: #333;
+  margin-bottom: 15px;
+  font-weight: 500;
+  text-align: left;
+}
+
+/* Order Item Styling */
+.order-history-container .order-list .order-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid #f0f0f0;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect for order items */
+.order-history-container .order-list .order-item:hover {
+  background-color: #f8f9fa;
+}
+
+/* Last item without border */
+.order-history-container .order-list .order-item:last-child {
+  border-bottom: none;
+}
+
+/* Order Info Styling */
+.order-history-container .order-list .order-item .order-info {
+  font-size: 1rem;
+  color: #333;
+  font-weight: 400;
+}
+
+/* Price Styling */
+.order-history-container .order-list .order-item .order-price {
+  font-size: 1.2rem;
+  color: #28a745;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .order-history-container {
+    padding: 20px;
+  }
+
+  .order-history-container h2 {
+    font-size: 2rem; /* Adjust the size for mobile */
+  }
+
+  .order-history-container p {
+    font-size: 1rem; /* Adjust font size for better readability */
+  }
+
+  .order-history-container .order-list {
+    padding: 15px;
+  }
+
+  .order-history-container .order-list .order-item {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 0;
+  }
+
+  .order-history-container .order-list .order-item .order-info,
+  .order-history-container .order-list .order-item .order-price {
+    margin-bottom: 5px;
+  }
+}
