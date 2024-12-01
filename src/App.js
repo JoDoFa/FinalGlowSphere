@@ -19,7 +19,7 @@ function App() {
     <Router>
       <div className="App">
         <header className="App-header">
-          <h1>Online Shop</h1>
+          <h1>GlowSphere</h1>
           <nav>
             <ul>
               <li><Link to="/">Home</Link></li>
@@ -46,5 +46,6 @@ function App() {
     </Router>
   );
 }
+
 
 export default App;
