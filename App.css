@@ -1,0 +1,1245 @@
+/* App.css */
+
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  min-height: 100vh; /* Ensure full-screen height */
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Makes the App container stretch to full height */
+}
+
+.App-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(to right, #0074D9, #00b8a9); /* Gradient background */
+  color: white;
+  padding: 12px 24px; /* Reduced padding for a more compact header */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
+  backdrop-filter: blur(6px); /* Subtle glass effect */
+  position: relative; /* Keep this for overlay positioning */
+  z-index: 1; /* Ensure it stays above other elements */
+}
+
+.App-header h1 {
+  font-size: 22px; /* Slightly smaller font size */
+  font-weight: 600; /* Medium weight for the header */
+  font-family: 'Playfair Display', serif; /* Elegant font for the header */
+  letter-spacing: 0.5px; /* Reduced letter spacing for compactness */
+}
+
+.App-header nav a {
+  font-size: 14px; /* Slightly smaller text for links */
+  color: #ffffff;
+  text-decoration: none;
+  margin: 0 12px; /* Reduced margin between links */
+  transition: color 0.3s ease;
+}
+
+.App-header nav a:hover {
+  color: #014b0e; /* Hover effect color */
+  opacity: 0.8; /* Slight opacity on hover */
+}
+
+
+nav ul {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+nav ul li {
+  margin: 0 10px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #063008;
+}
+
+main {
+  flex: 1;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+  background-color: #0074D9;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+}
+
+header, main, footer {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Full-Screen Background */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, hsl(0, 0%, 100%), hsl(182, 65%, 41%)); /* Gradient from #24a6ab to white */
+  z-index: -1; /* Send it behind all other elements */
+}
+
+
+/* Home Component Styles */
+/* Main container */
+/* Importing Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400&family=Roboto:wght@400&display=swap');
+
+/* General Reset */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(19, 87, 6, 0.8); /* Darker glass effect for better visibility */
+  padding: 15px 30px;
+  border-bottom: 2px solid #00b8a9; /* Teal bottom border to match the logo */
+  backdrop-filter: blur(10px); /* Glass effect */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Subtler shadow */
+}
+
+
+.navbar .logo {
+  font-family: 'Playfair Display', serif; /* Playfair Display for logo */
+  font-size: 26px; /* Slightly larger font for better visibility */
+  font-weight: bold;
+  color: #ffffff; /* White color for logo for contrast */
+  text-transform: uppercase; /* Make the logo text uppercase */
+}
+
+.navbar nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  font-size: 16px; /* Increased font size for better readability */
+  color: #ffffff; /* White text for navigation links */
+  transition: color 0.3s ease, opacity 0.3s ease; /* Smooth transition for both color and opacity */
+  text-transform: uppercase; /* Uppercase text for uniformity */
+}
+
+.navbar nav a:hover {
+  color: #02302c; /* Teal color on hover */
+  opacity: 0.8; /* Slight opacity on hover */
+}
+
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  padding: 100px 30px;
+  background: linear-gradient(to left, #ffffff 50%, #24a6ab 50%); /* Gradient background */
+  text-align: left;
+}
+
+.hero-section::before {
+  content: ""; /* Adds the image */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("https://cdn.shopify.com/s/files/1/0070/7032/articles/Start-a-Skincare-Line_Islenia-Mil_Email_68bb4b03-2c18-4f2c-9f11-81dce299083a.jpg?v=1730479484&originalWidth=1848&originalHeight=782&width=1400") no-repeat center center;
+  background-size: cover;
+  opacity: 0.2; /* Keeps the opacity for image */
+  z-index: 0; /* Keeps image in the background */
+}
+
+/* Hero Text Styling */
+.hero-text {
+  position: absolute; /* Absolute positioning to place text over image */
+  top: 50%; /* Centers the text vertically */
+  left: 50px; /* Move the text a little further from the left edge */
+  transform: translateY(-50%); /* Fine-tune the vertical centering */
+  z-index: 1; /* Keeps text above the image */
+  max-width: 600px;
+  color: #00302a; /* Text color */
+  text-shadow: 2px 2px 4px rgb(255, 255, 255); /* Adds outline/shadow effect */
+}
+
+
+/* Heading Styles */
+.hero-text h1 {
+  font-size: 56px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-align: left; 
+}
+
+/* Paragraph Styles */
+.hero-text p {
+  font-size: 22px;
+  color: #000000;
+  margin-bottom: 30px;
+  line-height: 1.6;
+  font-family: 'Roboto', sans-serif;
+  text-align: left; /* Align text to the left */
+  margin-left: 0; /* To prevent text from being too close to the edge */
+}
+
+
+/* Highlight Text Style */
+.hero-text .highlight {
+  color: #00b8a9;
+  text-shadow: 0 0 5px rgb(255, 255, 255), 0 0 10px rgba(0, 184, 169, 0.4);
+}
+
+/* Button Group */
+.button-group {
+  display: flex;
+  gap: 20px;
+  justify-content: left;
+  margin-top: 20px;
+}
+
+.button-group button {
+  padding: 15px 30px;
+  font-size: 18px;
+  color: #ffffff;
+  background-color: #00302a;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: 'Roboto', sans-serif;
+}
+
+.button-group button:hover {
+  background-color: #51ddcd;
+}
+
+
+/* Hero Image */
+.hero-image {
+  flex: 10; /* Let the image take up equal space */
+  display: flex;
+  justify-content: flex-start; /* Align the image to the left */
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0px 4px 8px rgb(0, 0, 0);
+}
+
+/* Featured Products Section */
+.featured-products {
+  padding: 40px 60px;
+  background-color: hsl(0, 0%, 100%);
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.5);/* Floating effect with shadow */
+  margin-top: 40px; /* Space from hero section */
+  z-index: 5;
+  position: relative;
+  text-align: center;
+}
+
+.featured-products h2 {
+  font-family: 'Lato', sans-serif;
+  font-size: 40px;
+  color: #004d40;
+  margin-bottom: 30px;
+}
+
+.product-cards {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px; /* Add consistent spacing between cards */
+}
+
+.product-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.6), rgba(0, 170, 255, 0.6)); /* Gradient background for each card */
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 280px;
+  height: 450px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.product-card:hover {
+  transform: translateY(-10px); /* Lift effect on hover */
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2); /* Enhanced shadow for hover */
+}
+
+
+.product-card:hover {
+  transform: translateY(-10px); /* Lift effect on hover */
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2); /* Enhanced shadow for hover */
+}
+
+
+.product-card:hover {
+  transform: translateY(-10px); /* Lift effect on hover */
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2); /* Enhanced shadow for hover */
+}
+
+
+.product-card img {
+  width: 100%; /* Keeps the image full width */
+  height: 200px; /* You can adjust the height for consistency */
+  object-fit: cover; /* Ensures it doesn't stretch */
+}
+
+.modal-content img {
+  width: 100%;
+  max-height: 400px; /* Limiting the height of the image in modal */
+  object-fit: contain; /* Ensures the image scales properly without distortion */
+}
+
+.product-card h3 {
+  font-family: 'Lato', sans-serif;
+  font-size: 20px; /* Slightly smaller font size */
+  color: #004d40;
+  margin-top: 15px;
+}
+
+.product-card p {
+  font-family: 'Roboto', sans-serif;
+  color: #555;
+  margin: 10px 0;
+  flex-grow: 1; /* Allows the text to stretch and balance the layout */
+  font-size: 14px; /* Smaller font size for better fit */
+  line-height: 1.4; /* Reduced line height for better spacing */
+  text-overflow: ellipsis; /* Prevent overflow */
+  overflow: hidden;
+  white-space: nowrap; /* Prevents text from wrapping */
+}
+
+.product-card button {
+  background-color: #00302a;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+  transition: background-color 0.3s ease;
+  margin-top: auto; /* Ensure the button stays at the bottom */
+}
+
+.product-card button:hover {
+  background-color: #00796b;
+}
+
+
+
+/* Products Component Styles */
+/* Main product container */
+/* Main container for products */
+/* Overall Products Container */
+.products-container {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(0, 170, 255, 0.2)); /* A soft gradient background */
+  border-radius: 12px; /* Optional rounded corners */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 4px 10px rgba(0, 0, 0, 0.05);
+  background-color: #a2d6ee; 
+  position: relative; /* To add layers or background images if needed */
+  overflow: hidden; /* Hide anything that goes beyond the borders */
+}
+
+.products-container:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("https://www.olanskydermatology.com/wp-content/uploads/2023/08/skincare.jpg") center/cover no-repeat; /* Replace with your background image */
+  opacity: 1; /* Adjust the opacity of the background image */
+  z-index: -1; /* To place the image behind the container */
+}
+
+h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+p {
+  text-align: center;
+  color: #555;
+  font-size: 1rem;
+  margin-bottom: 40px;
+}
+
+/* Category Styling */
+.category {
+  margin-bottom: 40px;
+}
+
+.category-title {
+  font-size: 2rem;
+  text-align: left;
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: 600;
+}
+
+/* Product Card Container Styling */
+.product-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+/* Individual Product Card Styling */
+.product-card {
+  width: 23%;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-image {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+.product-title {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  color: #333;
+}
+
+.product-price {
+  font-size: 1.1rem;
+  color: #28a745;
+  margin: 10px 0;
+}
+
+.product-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+/* Button Styling */
+button {
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.view-details-btn {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.add-to-cart-btn {
+  background-color: #ffc107;
+  color: #333;
+}
+
+.buy-btn {
+  background-color: #28a745;
+  color: #fff;
+}
+
+/* Button Hover Effects */
+button:hover {
+  opacity: 0.8;
+}
+
+.view-details-btn:hover {
+  background-color: #0056b3;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #e0a800;
+}
+
+.buy-btn:hover {
+  background-color: #218838;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .product-card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-card {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+
+  .product-buttons {
+    width: 100%;
+  }
+}
+
+
+
+
+/* Cart Component Styles */
+/* Container for the entire cart page */
+/* Overall Cart Container with soft and clean aesthetic */
+.cart-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  font-family: 'Lora', serif;
+  background: linear-gradient(135deg, #f0f0f0 0%, #fafafa 100%);
+  transform: scale(1);
+  transition: transform 0.3s ease;
+}
+
+.cart-container:hover {
+  transform: scale(1.02); /* Gentle zoom effect on hover */
+}
+
+/* Cart Page Title */
+.cart-container h2 {
+  text-align: center;
+  font-size: 3rem;
+  color: #2c3e50;
+  margin-bottom: 30px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.cart-container h2:hover {
+  color: #8e44ad; /* Purple hover effect */
+  transform: translateY(-5px); /* Subtle lift on hover */
+}
+
+/* Paragraph text for instructions or descriptions */
+.cart-container p {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #7f8c8d;
+  margin-bottom: 40px;
+  font-weight: 400;
+  opacity: 0.85;
+  transition: opacity 0.3s ease;
+}
+
+.cart-container p:hover {
+  opacity: 1; /* Subtle emphasis on hover */
+}
+
+/* Cart items container with soft, subtle borders */
+.cart-items-container {
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e4e4e4;
+}
+
+/* Individual Cart Item Style */
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid #e6e6e6;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cart-item:hover {
+  background-color: #f9f9f9;
+  transform: translateX(5px); /* Subtle slide effect for hover */
+}
+
+.cart-item h3 {
+  font-size: 1.6rem;
+  color: #34495e;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.cart-item h3:hover {
+  color: #8e44ad; /* Change color to match theme */
+}
+
+.cart-item p {
+  font-size: 1.2rem;
+  color: #7f8c8d;
+}
+
+.cart-item button {
+  padding: 12px 22px;
+  background-color: #8e44ad;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.cart-item button:hover {
+  background-color: #013144;
+  transform: scale(1.05);
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+/* Cart Summary Section */
+.cart-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+  border-top: 2px solid #e0e0e0;
+  padding-top: 20px;
+  transition: transform 0.3s ease;
+}
+
+.cart-summary:hover {
+  transform: translateY(-5px); /* Smooth lift for summary */
+}
+
+.cart-summary h3 {
+  font-size: 2rem;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.cart-summary p {
+  font-size: 1.5rem;
+  color: #7f8c8d;
+  font-weight: 500;
+}
+
+/* Buttons container at the bottom of the cart */
+.cart-buttons-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+.cart-buttons-container button {
+  padding: 18px 30px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  width: 48%;
+  border: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.proceed-btn {
+  background-color: #3498db;
+  color: #fff;
+}
+
+.proceed-btn:hover {
+  background-color: #2980b9;
+  transform: scale(1.05);
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+}
+
+.clear-cart-btn {
+  background-color: #95a5a6;
+  color: #fff;
+}
+
+.clear-cart-btn:hover {
+  background-color: #7f8c8d;
+  transform: scale(1.05);
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Empty Cart Message */
+.cart-empty-message {
+  text-align: center;
+  padding: 40px 0;
+  display: none;
+}
+
+.cart-empty-message p {
+  font-size: 1.8rem;
+  color: #e74c3c;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* Show empty cart message if cart is empty */
+.cart-items-container.empty-cart + .cart-empty-message {
+  display: block;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .cart-container {
+    padding: 20px;
+  }
+
+  .cart-items-container {
+    margin-bottom: 20px;
+  }
+
+  .cart-item h3 {
+    font-size: 1.4rem;
+  }
+
+  .cart-summary h3, .cart-summary p {
+    font-size: 1.4rem;
+  }
+
+  .cart-buttons-container button {
+    font-size: 1rem;
+    padding: 12px 20px;
+  }
+}
+
+
+/* General Container Styling */
+.account-container {
+  max-width: 450px;
+  margin: 50px auto;
+  padding: 30px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  font-family: 'Roboto', Arial, sans-serif;
+  text-align: center;
+  color: #343a40;
+}
+
+/* Title Styling */
+.account-container h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #007bff;
+  font-weight: 700;
+}
+
+.account-container p {
+  font-size: 1rem;
+  margin-bottom: 25px;
+  color: #6c757d;
+  line-height: 1.6;
+}
+
+/* Input Styles */
+.account-container input {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #495057;
+  background-color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.account-container input:focus {
+  border-color: #007bff;
+  background-color: #f8f9fa;
+  outline: none;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+}
+
+/* Label Styles */
+.account-container label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  color: #495057;
+  text-align: left;
+}
+
+/* Button Group */
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+/* Button Styling */
+.account-container button {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #fff;
+}
+
+/* Button Colors */
+.btn-primary {
+  background-color: #007bff;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.btn-warning {
+  background-color: #ffc107;
+  color: #212529;
+}
+
+.btn-warning:hover {
+  background-color: #e0a800;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268;
+}
+
+/* Account List Section */
+.account-list {
+  margin-top: 30px;
+  text-align: left;
+}
+
+.account-list h3 {
+  font-size: 1.4rem;
+  color: #495057;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.account-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.account-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f8f9fa;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.account-list li:hover {
+  transform: translateY(-3px);
+}
+
+/* Account Info - Left side */
+.account-info {
+  flex-grow: 1; /* Makes the username section take up available space */
+}
+
+/* Delete Button Container */
+.delete-button-container {
+  text-align: right; /* Aligns button to the right */
+}
+
+/* Delete Button Styling */
+.account-list li button {
+  padding: 8px 12px;
+  font-size: 0.85rem;
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.account-list li button:hover {
+  background-color: #c82333;
+  transform: translateY(-2px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .account-list li button {
+    padding: 6px 10px;
+    font-size: 0.75rem;
+  }
+}
+
+
+
+/* OrderHistory Component Styles */
+/* Container for the Order History */
+.order-history-container {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 30px;
+  border-radius: 12px;
+  background-color: #ffffff;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  animation: fadeIn 1s ease-out;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Fade-In Animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Title Styling */
+.order-history-container h2 {
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+  color: #333;
+  font-weight: 600;
+  text-align: center;
+  animation: slideIn 0.6s ease-out;
+}
+
+/* Slide-In Animation */
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Description paragraph style */
+.order-history-container p {
+  margin-bottom: 40px; /* Increased margin for more space */
+  color: #555;
+  font-size: 1rem;
+  text-align: center;
+  font-weight: 300;
+}
+
+/* Order List Styling */
+.order-history-container .order-list {
+  margin-top: 40px; /* Increased top margin */
+  padding: 25px; /* Added more padding */
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+/* Order List hover effect */
+.order-history-container .order-list:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Order List Title Styling */
+.order-history-container .order-list h3 {
+  font-size: 1.6rem;
+  color: #333;
+  margin-bottom: 25px; /* Increased margin */
+  font-weight: 500;
+  text-align: left;
+}
+
+/* Order Item Styling */
+.order-history-container .order-list .order-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0; /* Increased padding for spacing */
+  border-bottom: 1px solid #f0f0f0;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect for order items */
+.order-history-container .order-list .order-item:hover {
+  background-color: #f8f9fa;
+}
+
+/* Last item without border */
+.order-history-container .order-list .order-item:last-child {
+  border-bottom: none;
+}
+
+/* Order Info Styling */
+.order-history-container .order-list .order-item .order-info {
+  font-size: 1rem;
+  color: #333;
+  font-weight: 400;
+  flex: 1; /* Ensure it takes up the remaining space */
+  margin-right: 20px; /* Added right margin to give space before the price */
+}
+
+/* Price Styling */
+.order-history-container .order-list .order-item .order-price {
+  font-size: 1.2rem;
+  color: #28a745;
+  font-weight: 600;
+  transition: color 0.3s ease;
+  width: 120px; /* Ensuring consistent width for prices */
+  text-align: right; /* Right-align prices */
+}
+
+/* Button Styling */
+.order-history-container .order-list .order-item button {
+  margin-left: 20px; /* Added margin for spacing between the price and button */
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Hover effect for buttons */
+.order-history-container .order-list .order-item button:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .order-history-container {
+    padding: 20px;
+  }
+
+  .order-history-container h2 {
+    font-size: 2rem;
+  }
+
+  .order-history-container p {
+    font-size: 1rem;
+  }
+
+  .order-history-container .order-list {
+    padding: 15px;
+  }
+
+  .order-history-container .order-list .order-item {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 0; /* Increased vertical padding */
+  }
+
+  .order-history-container .order-list .order-item .order-info,
+  .order-history-container .order-list .order-item .order-price {
+    margin-bottom: 10px; /* More spacing between order info and price */
+  }
+
+  .order-history-container .order-list .order-item .order-price {
+    text-align: left;
+    width: auto; /* Reset width for mobile */
+  }
+
+  .order-history-container .order-list .order-item button {
+    margin-top: 10px;
+  }
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  position: relative;
+  max-width: 500px;
+  width: 90%;
+}
+
+.modal-content img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.modal-content button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modal-content button:hover {
+  background: #0056b3;
+}
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent dark background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure modal is above other content */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0s ease 0.3s;
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.modal-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* Product Price */
+.product-price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Close Button */
+.close-btn {
+  background-color: #f44336;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px;
+  font-size: 1rem;
+}
+
+.close-btn:hover {
+  background-color: #d32f2f;
+}
+
+/* Open modal state (When visible) */
+.modal-overlay.show {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease, visibility 0s ease 0s;
+}
+
+.modal-content.show {
+  transform: translateY(0); /* Animate modal into view */
+}
+
+/* Optional styling for product cards if you want consistent padding or borders */
+.product-card {
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.product-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
