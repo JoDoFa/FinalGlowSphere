@@ -3,7 +3,7 @@
 body {
   margin: 0;
   font-family: 'Arial', sans-serif;
-  background-color: #f4f4f9;
+  background-color: #f9f5f4;
   color: #333;
   min-height: 100vh; /* Ensure full-screen height */
 }
@@ -17,57 +17,88 @@ body {
 .App-header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  background: linear-gradient(to right, #0074D9, #00b8a9); /* Gradient background */
-  color: white;
-  padding: 12px 24px; /* Reduced padding for a more compact header */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
-  backdrop-filter: blur(6px); /* Subtle glass effect */
-  position: relative; /* Keep this for overlay positioning */
-  z-index: 1; /* Ensure it stays above other elements */
+  justify-content: space-between; /* This ensures logo is on the left and menu is on the right */
+  background: linear-gradient(to right, #0074D9, #00b8a9);
+  color: rgb(255, 255, 255);
+  padding: 12px 24px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(6px);
+  position: relative;
+  z-index: 1;
 }
+
+.App-header .logo {
+  width: 40px; /* Adjust size of logo */
+  height: 40px; /* Make height equal to width for a perfect circle */
+  margin-right: 15px; /* Space between logo and nav items */
+  border-radius: 50%; /* This makes the logo circular */
+  object-fit: cover; /* Ensures the image fits nicely within the circle */
+}
+
 
 .App-header h1 {
-  font-size: 22px; /* Slightly smaller font size */
-  font-weight: 600; /* Medium weight for the header */
-  font-family: 'Playfair Display', serif; /* Elegant font for the header */
-  letter-spacing: 0.5px; /* Reduced letter spacing for compactness */
+  font-size: 25px;
+  font-weight: 600;
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 0.5px;
+  margin-left: 0; /* Removes unnecessary gap */
 }
 
-.App-header nav a {
-  font-size: 14px; /* Slightly smaller text for links */
-  color: #ffffff;
-  text-decoration: none;
-  margin: 0 12px; /* Reduced margin between links */
-  transition: color 0.3s ease;
+.App-header nav {
+  margin-left: auto; /* This pushes the nav to the right */
 }
 
-.App-header nav a:hover {
-  color: #014b0e; /* Hover effect color */
-  opacity: 0.8; /* Slight opacity on hover */
-}
-
-
-nav ul {
+.App-header nav ul {
   display: flex;
   padding: 0;
   margin: 0;
   list-style: none;
 }
 
-nav ul li {
-  margin: 0 10px;
+.App-header nav ul li {
+  margin: 0 15px;
 }
 
-nav ul li a {
+.App-header nav ul li a {
+  font-size: 16px;
+  color: #ffffff;
   text-decoration: none;
-  color: white;
-  font-weight: bold;
-  transition: color 0.3s;
+  font-weight: 600;
+  padding-bottom: 5px;
+  transition: all 0.3s ease;
+  text-transform: capitalize;
+  position: relative; /* Added this line */
 }
 
-nav ul li a:hover {
-  color: #063008;
+.App-header nav ul li a::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #ffffff;
+  transition: width 0.3s ease-in-out;
+}
+
+.App-header nav ul li a:hover::before {
+  width: 100%;
+}
+
+.App-header nav ul li a:hover {
+  color: #00b8a9;
+  transform: scale(1.05);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 15px rgba(0, 184, 169, 0.7);
+}
+
+
+.App-header nav ul li a:hover {
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.App-header nav ul li a:hover {
+  box-shadow: 0 0 15px rgba(0, 184, 169, 0.7);
 }
 
 main {
@@ -91,6 +122,7 @@ header, main, footer {
   box-sizing: border-box;
 }
 
+
 /* Full-Screen Background */
 body::before {
   content: "";
@@ -99,8 +131,23 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to right, hsl(0, 0%, 100%), hsl(182, 65%, 41%)); /* Gradient from #24a6ab to white */
-  z-index: -1; /* Send it behind all other elements */
+  background: 
+    linear-gradient(to right, hsl(0, 0%, 100%), hsl(182, 65%, 41%)); /* Gradient background */
+  z-index: -1; /* Keep behind content */
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 28" preserveAspectRatio="none" width="100%" height="100%"%3E%3Cpath d="M0 10C30 18 55 12 80 14C100 16 120 14 120 14V28H0V10Z" fill="rgba(0, 0, 0, 0.25)" /%3E%3C/svg%3E'), /* Enhanced wave pattern */
+    url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%"%3E%3Ccircle cx="30" cy="30" r="10" fill="rgba(255, 255, 255, 0.5)" /%3E%3Ccircle cx="70" cy="50" r="15" fill="rgba(255, 255, 255, 0.3)" /%3E%3Ccircle cx="50" cy="80" r="12" fill="rgba(255, 255, 255, 0.2)" /%3E%3Ccircle cx="90" cy="20" r="8" fill="rgba(255, 255, 255, 0.6)" /%3E%3Ccircle cx="10" cy="70" r="5" fill="rgba(255, 255, 255, 0.4)" /%3E%3C/svg%3E'); /* Bubble pattern */
+  opacity: 0.35; /* Slightly higher opacity for better visibility */
+  z-index: -1; /* Keeps it behind content */
 }
 
 
@@ -218,25 +265,33 @@ body, html {
 .button-group {
   display: flex;
   gap: 20px;
-  justify-content: left;
+  justify-content: center;  /* Center the buttons */
   margin-top: 20px;
 }
 
 .button-group button {
-  padding: 15px 30px;
-  font-size: 18px;
+  padding: 12px 30px;  /* Adjusted padding for better balance */
+  font-size: 16px;
   color: #ffffff;
   background-color: #00302a;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;  /* Increased border radius for a smoother look */
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth color change and scaling */
   font-family: 'Roboto', sans-serif;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
 }
 
 .button-group button:hover {
   background-color: #51ddcd;
+  transform: scale(1.05);  /* Slight scaling effect on hover */
 }
+
+.button-group button:active {
+  transform: scale(0.98);  /* Slight shrink on button press */
+}
+
+
 
 
 /* Hero Image */
@@ -312,15 +367,10 @@ body, html {
 
 
 .product-card img {
-  width: 100%; /* Keeps the image full width */
-  height: 200px; /* You can adjust the height for consistency */
-  object-fit: cover; /* Ensures it doesn't stretch */
-}
-
-.modal-content img {
   width: 100%;
-  max-height: 400px; /* Limiting the height of the image in modal */
-  object-fit: contain; /* Ensures the image scales properly without distortion */
+  height: 200px; /* Fixed height for consistent image size */
+  object-fit: cover; /* Ensure the image fits the area without distortion */
+  border-radius: 8px;
 }
 
 .product-card h3 {
@@ -342,77 +392,22 @@ body, html {
   white-space: nowrap; /* Prevents text from wrapping */
 }
 
+/* Product Card Button Styling */
 .product-card button {
   background-color: #00302a;
   border: none;
   color: white;
-  padding: 10px 20px;
+  padding: 12px 20px; /* Increased padding for better button size */
   border-radius: 5px;
   cursor: pointer;
   font-family: 'Roboto', sans-serif;
   transition: background-color 0.3s ease;
-  margin-top: auto; /* Ensure the button stays at the bottom */
+  margin-top: 15px; /* Adding space between buttons */
+  width: 100%; /* Ensures button spans the entire width */
 }
 
 .product-card button:hover {
   background-color: #00796b;
-}
-
-
-
-/* Products Component Styles */
-/* Main product container */
-/* Main container for products */
-/* Overall Products Container */
-.products-container {
-  max-width: 1200px;
-  margin: 50px auto;
-  padding: 20px;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(0, 170, 255, 0.2)); /* A soft gradient background */
-  border-radius: 12px; /* Optional rounded corners */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 4px 10px rgba(0, 0, 0, 0.05);
-  background-color: #a2d6ee; 
-  position: relative; /* To add layers or background images if needed */
-  overflow: hidden; /* Hide anything that goes beyond the borders */
-}
-
-.products-container:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: url("https://www.olanskydermatology.com/wp-content/uploads/2023/08/skincare.jpg") center/cover no-repeat; /* Replace with your background image */
-  opacity: 1; /* Adjust the opacity of the background image */
-  z-index: -1; /* To place the image behind the container */
-}
-
-h2 {
-  font-size: 2.5rem;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-p {
-  text-align: center;
-  color: #555;
-  font-size: 1rem;
-  margin-bottom: 40px;
-}
-
-/* Category Styling */
-.category {
-  margin-bottom: 40px;
-}
-
-.category-title {
-  font-size: 2rem;
-  text-align: left;
-  margin-bottom: 20px;
-  color: #333;
-  font-weight: 600;
 }
 
 /* Product Card Container Styling */
@@ -429,48 +424,72 @@ p {
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 15px;
+  padding: 20px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Ensures content is spread out */
+  height: auto; /* Let height be based on content */
   transition: transform 0.3s ease;
 }
 
-.product-card:hover {
-  transform: translateY(-5px);
-}
-
-.product-image {
+.product-card img {
   width: 100%;
-  height: auto;
-  border-radius: 6px;
+  height: 200px; /* Fixed height for consistent image size */
+  object-fit: cover; /* Ensure the image fits the area without distortion */
+  border-radius: 8px;
 }
 
-.product-title {
-  font-size: 1.2rem;
-  margin-top: 10px;
-  color: #333;
+.product-card h3 {
+  font-family: 'Lato', sans-serif;
+  font-size: 20px; /* Slightly smaller font size */
+  color: #004d40;
+  margin-top: 15px;
 }
 
-.product-price {
-  font-size: 1.1rem;
-  color: #28a745;
+.product-card p {
+  font-family: 'Roboto', sans-serif;
+  color: #555;
   margin: 10px 0;
+  flex-grow: 1; /* Allows the text to stretch and balance the layout */
+  font-size: 14px; /* Smaller font size for better fit */
+  line-height: 1.4; /* Reduced line height for better spacing */
+  text-overflow: ellipsis; /* Prevent overflow */
+  overflow: hidden;
+  white-space: nowrap; /* Prevents text from wrapping */
 }
+
+/* Ensure Price is Visible and Not Overlapped */
+.product-price {
+  min-height: 40px;
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 15px; /* Spacing before price */
+}
+
+/* Product Buttons */
 
 .product-buttons {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  margin-top: 15px;
+  gap: 3px; /* Reduced gap between buttons */
+  margin-top: 10px;
+  justify-content: flex-end; /* Buttons stay at the bottom */
+  width: 100%;
 }
+
 
 /* Button Styling */
 button {
-  padding: 8px 12px;
+  padding: 12px 0;
   font-size: 0.9rem;
   border-radius: 5px;
   border: none;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  height: 45px; /* Fixed height */
+  width: 100%; /* Make buttons fill the container */
 }
 
 .view-details-btn {
@@ -520,6 +539,88 @@ button:hover {
   .product-buttons {
     width: 100%;
   }
+}
+
+/* Modal Styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Dark background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+/* Close Button */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 30px;
+  cursor: pointer;
+  color: #000;
+  transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+  color: rgb(102, 0, 0); /* Red color on hover */
+}
+
+/* Product Details Section */
+.product-details {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.modal-product-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.product-details p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Styling for Product Name */
+.modal h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Additional Styling */
+.product-details img {
+  transition: transform 0.3s ease;
+}
+
+.product-details img:hover {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+.product-details p:last-child {
+  font-weight: bold;
+  color: #2d9e5e; /* Green color for price */
 }
 
 
